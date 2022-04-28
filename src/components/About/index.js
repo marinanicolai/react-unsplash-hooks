@@ -1,11 +1,12 @@
 import React from "react";
+import { Title } from "./About.styles";
 
-function About() {
+const About = () => {
   return (
     <div>
-      <h1>About</h1>
+      <Title>The images are fetched from unsplash api</Title>
     </div>
   );
-}
+};
 
 export default About;
