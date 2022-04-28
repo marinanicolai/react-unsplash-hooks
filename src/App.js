@@ -1,34 +1,23 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, Outlet } from "react-router-dom";
+import Nav from "./Nav";
 
-const App = () => {
+function App() {
   return (
-    <Router>
+    <BrowserRouter>
+      <Nav />
       <Routes>
-        <Route path="/" exact component={Search} />
-        <Route path="/about" component={About} />
-        <Route path="/item/:id" component={Item} />
+        <Route path="/" element={<Search />} />
+        <Route path="about" element={<About />} />
+        <Route path="item/:id" element={<Item />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
-};
+}
 
 function Search() {
   return (
     <div>
-      <nav>
-        <Link to="me">This is search</Link>
-      </nav>
-    </div>
-  );
-}
-
-function About() {
-  return (
-    <div>
-      <nav>
-        <Link to="me">This is about</Link>
-      </nav>
+      <h1>Search</h1>
     </div>
   );
 }
@@ -36,9 +25,15 @@ function About() {
 function Item() {
   return (
     <div>
-      <nav>
-        <Link to="me">This is item</Link>
-      </nav>
+      <h1>Item</h1>
+    </div>
+  );
+}
+
+function About() {
+  return (
+    <div>
+      <h1>About</h1>
     </div>
   );
 }
