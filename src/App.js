@@ -1,5 +1,8 @@
-import { BrowserRouter, Routes, Route, Link, Outlet } from "react-router-dom";
-import Nav from "./Nav";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Nav from "./components/Nav";
+import Search from "./components/Search";
+import About from "./components/About";
+import Item from "./components/Item";
 
 function App() {
   return (
@@ -11,30 +14,6 @@ function App() {
         <Route path="item/:id" element={<Item />} />
       </Routes>
     </BrowserRouter>
-  );
-}
-
-function Search() {
-  return (
-    <div>
-      <h1>Search</h1>
-    </div>
-  );
-}
-
-function Item() {
-  return (
-    <div>
-      <h1>Item</h1>
-    </div>
-  );
-}
-
-function About() {
-  return (
-    <div>
-      <h1>About</h1>
-    </div>
   );
 }
 
